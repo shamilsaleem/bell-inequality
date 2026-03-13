@@ -1,0 +1,94 @@
+\documentclass[17pt,a4paper]{extarticle}
+
+% Set 1-inch margins
+\usepackage[margin=1in]{geometry}
+
+% Font and spacing (optional but recommended)
+\usepackage{setspace}
+\setstretch{1.2}
+\setlength{\parskip}{1em}
+\sloppy
+
+\usepackage{titlesec}
+
+\titleformat{\section}
+  {\normalfont\large\bfseries}
+  {}
+  {0pt}
+  {}
+
+\usepackage{amsmath}
+
+
+% For better text appearance
+\usepackage{lmodern}
+
+\begin{document}
+
+\section*{Why classical physics was insufficient?}
+
+Classical physics, developed mainly through the works of Newton, Maxwell, and classical thermodynamics, was highly successful in explaining the motion of macroscopic objects, the behavior of waves, and electromagnetic phenomena. It provided accurate predictions for everyday experiences and large-scale physical systems. However, towards the end of the nineteenth century, several experimental observations revealed serious limitations of classical physics when applied to microscopic systems.
+
+One of the major shortcomings of classical physics was its inability to explain phenomena occurring at the atomic and subatomic scale. According to classical theory, energy exchange between matter and radiation was expected to be continuous. Experimental results, however, showed that energy is exchanged in discrete packets. This discrepancy became evident in experiments such as black body radiation, where classical theories predicted an infinite emission of energy at short wavelengths, a result known as the ultraviolet catastrophe, which was not observed in reality.
+
+Another important failure of classical physics was in explaining the photoelectric effect. Classical wave theory predicted that the energy of emitted electrons should depend on the intensity of incident light. Experiments showed instead that electron emission depends on the frequency of light, and no electrons are emitted below a certain threshold frequency regardless of intensity. This behavior could not be explained using classical concepts of light.
+
+Classical physics also failed to account for the stability of atoms. According to classical electrodynamics, an electron moving in a circular orbit around the nucleus should continuously radiate energy and spiral into the nucleus, leading to atomic collapse. However, atoms are stable and exhibit well-defined energy levels, a fact that classical physics could not justify.
+
+These experimental contradictions demonstrated that classical laws were inadequate for describing nature at microscopic scales. As a result, a new theoretical framework—quantum mechanics—was developed to successfully explain atomic structure, radiation-matter interaction, and other microscopic phenomena. Quantum mechanics introduced fundamentally new ideas such as energy quantization, wave–particle duality, and probabilistic interpretation, which resolved the failures of classical physics and laid the foundation for modern physics.
+\subsection{What is Quantum Mechanics?}
+Here are the core ideas:
+\begin{itemize}
+  \item Wave-Particle Duality: Particles like electrons and photons behave as both localized particles and spread-out waves, depending on how they're observed. 
+  \item Quantization: Energy, momentum, and other properties are not continuous but exist in specific, discrete packets (quanta).
+  \item Uncertainty Principle: You can't know a particle's exact position and momentum at the same time; the more precisely you know one, the less precisely you know the other (Heisenberg's Principle).
+  \item Superposition: A quantum system can exist in multiple possible states simultaneously (e.g., an electron's spin up and down) until measured.
+  \item Measurement Problem/Wave Function Collapse: The act of measuring a quantum system forces it out of superposition into a single definite state.
+  \item Schrödinger Equation: The fundamental equation describing how the wave function (probability wave) of a quantum system evolves over time. 
+
+\begin{equation*}
+i\hbar \frac{\partial \Psi(\mathbf{r},t)}{\partial t}
+=
+\left(
+-\frac{\hbar^2}{2m}\nabla^2 + V(\mathbf{r},t)
+\right)
+\Psi(\mathbf{r},t)
+\end{equation*}
+
+
+  \item Entanglement: Two or more particles become linked, sharing the same fate, so measuring one instantly influences the state of the other, no matter the distance.
+
+  \subsection{Quantum Superposition}
+  Imagine touching the surface of a pond at two different points at the same time. Waves would spread outward from each point, eventually overlapping to form a more complex pattern. This is a superposition of waves. Similarly, in quantum science, objects such as electrons and photons have wavelike properties that can combine and become what is called superposed.
+
+  Quantum superposition is a fundamental principle of quantum mechanics which states that a quantum system can exist in multiple possible states simultaneously until it is observed or measured. Unlike everyday objects, which occupy one definite state at a time, particles such as electrons or photons can exist in a combination of states at once. For example, an electron can be in a superposition of spin-up and spin-down states, or a photon can be polarized both vertically and horizontally at the same time.
+
+  In quantum mechanics, a system can exist in a superposition of multiple possible states prior to measurement. Unlike classical systems, where physical properties have definite values at all times, a quantum system does not possess a single definite outcome before observation. Instead, the system is described by a wave function that contains all possible outcomes simultaneously, each associated with a probability amplitude.
+  
+When a measurement is performed on a quantum system, the superposed state does not remain intact. The act of measurement forces the system to yield a single definite result from the set of possible outcomes. This process is commonly referred to as the collapse of the wave function. The probability of obtaining a particular outcome is determined by the square of the corresponding probability amplitude in the superposition.
+
+For example, consider an electron whose spin is in a superposition of spin-up and spin-down states along a given direction. Before measurement, neither outcome is realized individually. Upon measurement, however, the electron is found in either the spin-up or spin-down state, with probabilities that can be predicted by quantum mechanics, but with no way to determine the exact outcome in advance.
+This measurement process highlights a fundamental difference between classical and quantum physics. In classical physics, measurement merely reveals a pre-existing property of the system. In quantum mechanics, measurement plays an active role in determining the outcome. The result is not simply uncovered but is brought into existence by the act of measurement itself.
+
+The role of measurement in quantum mechanics reveals that the act of observation does not merely uncover pre-existing properties but actively influences the state of a quantum system. While this effect is already striking in single-particle systems, its implications become even more profound when considering systems composed of more than one quantum particle. In such composite systems, measurement can no longer be regarded as acting on individual particles independently.
+
+When multiple particles are described by a common quantum state, the measurement of one particle affects the description of the entire system. The outcomes obtained for different particles may exhibit correlations that cannot be explained by classical physics or by assuming that each particle possesses definite properties prior to measurement. These correlations arise from the shared quantum state of the system rather than from any direct interaction at the time of measurement.
+
+This observation suggests that quantum mechanics allows for forms of correlation that are fundamentally different from classical correlations. Understanding these non-classical correlations requires moving beyond single-particle superposition and examining the collective behavior of multi-particle quantum systems. This naturally leads to the concept of quantum entanglement, where the quantum states of particles become inseparably linked, giving rise to correlations that challenge classical notions of locality and realism.
+
+\subsection{Quantum Entanglement}
+Quantum entanglement is a phenomenon in quantum mechanics in which two or more particles become so closely connected that they must be described as a single system, even when they are separated by large distances. In such a situation, the physical properties of the individual particles are not independent of each other.
+
+In everyday (classical) physics, objects have their own properties regardless of whether they are observed or not. For example, two coins placed in different rooms will each have a definite face—head or tail—whether or not someone looks at them. Any correlation between classical objects is due to prior agreement or interaction, and once the objects are separated, their properties remain fixed.
+
+In quantum mechanics, entangled particles behave very differently. When two particles are entangled, they do not possess definite values of certain properties, such as spin or polarization, before measurement. Instead, these properties are defined only for the system as a whole. When a measurement is performed on one particle, the outcome is obtained randomly. However, the result of a corresponding measurement on the other particle is immediately correlated with the first, no matter how far apart the particles are.
+
+For example, consider a pair of particles prepared in such a way that their total spin is zero. Before measurement, neither particle has a definite spin direction. If one particle is measured and found to have spin “up,” the other particle will always be found to have spin “down” when measured along the same direction. This correlation is observed even if the particles are separated by large distances.
+
+It is important to note that quantum entanglement does not involve the transfer of information faster than the speed of light. The outcome of each individual measurement is still random, and no usable signal is transmitted between the particles. The strong correlation arises because the particles share a common quantum state created during their interaction.
+
+Quantum entanglement reveals that the quantum description of nature is fundamentally non-classical. The behavior of entangled systems cannot be explained by assuming that particles carry predetermined properties or by using classical ideas of cause and effect. These unusual correlations led physicists to question the completeness of quantum mechanics and motivated deeper investigations into the nature of reality, such as the Einstein–Podolsky–Rosen paradox.
+
+\end{itemize}
+
+\end{document}
