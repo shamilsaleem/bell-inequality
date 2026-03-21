@@ -1,4 +1,4 @@
-\documentclass[14pt,a4paper]{extarticle}
+\documentclass[17pt,a4paper]{extarticle}
 
 % 1 inch margins
 \usepackage[margin=1in]{geometry}
@@ -8,9 +8,6 @@
 \usepackage{subcaption}
 \usepackage{listings}
 \usepackage{float}
-\usepackage{setspace}
-\usepackage{titlesec}
-\usepackage{ragged2e}
 
 
 % Line spacing (optional)
@@ -30,125 +27,6 @@
 
 
 \begin{document}
-
-%-------------------- TITLE PAGE --------------------%
-\begin{titlepage}
-\centering
-
-% LOGO
-\includegraphics[width=3.5cm]{images/collegelogo.png}\\[0.5cm]
-
-\textbf{ST. JOSEPH'S COLLEGE (AUTONOMOUS), DEVAGIRI, CALICUT}\\[1cm]
-
-\textbf{ “projectname”}\\[1cm]
-
-Report of the project submitted to\\
-St. Joseph's College (Autonomous), Devagiri\\
-Affiliated to the University of Calicut\\[1cm]
-
-By\\[0.5cm]
-
-\textbf{DEVI KRISHNA A}\\
-(DVAXSPH034)\\[0.5cm]
-
-Program: B.Sc. Physics\\
-Semester: VI\\[1cm]
-
-\textbf{DEPARTMENT OF PHYSICS}\\[0.5cm]
-
-March 2026\\[1cm]
-
-\begin{flushleft}
-Principal \hfill Head of the Department \hfill Supervisor
-\end{flushleft}
-
-\vfill
-\justifying
-\noindent College Seal
-
-\end{titlepage}
-
-%-------------------- REST SAME --------------------%
-
-\newpage
-\pagestyle{empty}
-\vspace*{\fill}
-\section*{\centering CERTIFICATE}
-\justifying
-
-This is to certify that \textbf{Ms. DEVI KRISHNA A} has worked on the topic
-“\textbf{projectname}” at St. Joseph’s College Devagiri (Autonomous), Calicut, under my supervision and guidance. This work has been carried out for the partial fulfilment of the Bachelor of Science Degree in Physics, University of Calicut.
-
-\vspace{1cm}
-\noindent \textbf{GROUP MEMBERS}
-\begin{enumerate}
-\item SHAMIL SALEEM.C (DVAXSPH044)
-\item ALAN A (DVAXSPH002)
-\item NANDA R K (DVAXSPH035)
-\item LAKSHMIPRIYA RAMESH (DVAXSPH039)
-\end{enumerate}
-
-
-\vfill
-
-\begin{flushleft}
-\textbf{Dr. Meril Mathew} \hfill \textbf{Dr. Shinto P Mathew}\\
-Head Of The Department \hfill Assistant Professor\\
-Department Of Physics \hfill Department Of Physics\\
-St. Joseph's College \hfill St. Joseph's College\\
-(Autonomous), Devagiri \hfill (Autonomous), Devagiri\\
-Calicut-673008 \hfill Calicut-673008\\
-Kerala \hfill Kerala
-\end{flushleft}
-
-\newpage
-\vspace*{\fill}
-\section*{\centering DECLARATION}
-\justifying
-
-We hereby declare that this project entitled “\textbf{projectname}” submitted to St. Joseph’s College (Autonomous), Devagiri, affiliated to University of Calicut in partial fulfilment of the requirements for the award of degree of BACHELOR OF SCIENCE IN PHYSICS is a record of original project work done by us under the supervision and guidance of Dr. SHINTO P. MATHEW.
-
-\vspace{2cm}
-
-\begin{flushright}
-DEVI KRISHNA A\\
-(Reg. No. DVAXSPH034)
-\end{flushright}
-
-\vspace{1cm}
-
-\noindent Kozhikode-673008\\
-Date:
-\vspace*{\fill}
-\newpage
-\vspace*{\fill}
-\section*{\centering ACKNOWLEDGEMENT}
-\justifying
-
-At the very first we would like to express our deep-felt gratitude to the many hearts that worked behind this project. The constant encouragement, critical assessment and valuable guidance of Dr. SHINTO P. MATHEW gave us great insight during our work. We shall be ever grateful to him, and we are very grateful to Dr. MERIL MATHEW, Head of the Physics Department. We are also grateful to all the teachers and non-teaching staff of the Department of Physics for their good wishes and generosity.
-
-\vspace{2cm}
-
-\begin{flushright}
-DEVI KRISHNA A\\
-(Reg. No. DVAXSPH034)
-\end{flushright}
-\vspace*{\fill}
-\newpage
-
-\vspace*{\fill}
-\section*{\centering Abstract}
-\vspace{1em}
-    This project investigates the fundamental differences between classical and quantum physics through the study of quantum entanglement, the EPR paradox, and Bell’s theorem. It examines the concepts of locality and realism and tests them using the CHSH inequality. Classical and quantum systems are analyzed through numerical simulations, showing that classical correlations satisfy the bound ${|S|\leq2}$, while quantum mechanics violates this limit, reaching values up to $2\sqrt{2}$
-
-    A classical polarization experiment based on Malus’ Law is also conducted to provide experimental comparison. The results confirm that classical theories cannot explain quantum correlations, demonstrating the non-classical nature of entanglement and the limitations of local hidden-variable theories.
-
-\vspace*{\fill}
-
-\newpage
-\tableofcontents
-\newpage
-\pagestyle{plain}
 \section{Introduction}
 \subsection{Why classical physics was insufficient?}
 
@@ -648,6 +526,52 @@ plt.close()
     \end{lstlisting}
 \end{enumerate}
 
+\begin{lstlisting}[language=Python, basicstyle=\ttfamily\footnotesize]
+import numpy as np
+import matplotlib.pyplot as plt
+
+trials = []
+S_abs_values = []
+
+N = int(input("No of particle pairs: "))
+
+def correlation(a, b):
+    return np.mean(a * b)
+
+print("E_xx\tE_xy\tE_yx\tE_yy\tS\t|S|")
+
+for i in range(100):
+
+    alice_X = np.random.choice([1, -1], N)
+    alice_Y = np.random.choice([1, -1], N)
+
+    bob_X   = np.random.choice([1, -1], N)
+    bob_Y   = np.random.choice([1, -1], N)
+
+    E_xx = correlation(alice_X, bob_X)
+    E_xy = correlation(alice_X, bob_Y)
+    E_yx = correlation(alice_Y, bob_X)
+    E_yy = correlation(alice_Y, bob_Y)
+
+    S = E_xx + E_xy + E_yx - E_yy
+
+    trials.append(i)
+    S_abs_values.append(abs(S))
+
+    print(f"{E_xx:7.4f}\t{E_xy:7.4f}\t{E_yx:7.4f}\t{E_yy:7.4f}\t{S:7.4f}\t{abs(S):.4f}")
+
+plt.plot(trials, S_abs_values, ".")
+
+plt.xlabel("Trial number")
+plt.ylabel("|S|")
+plt.grid(axis="y")
+plt.ylim(0, 2)
+
+plt.title(f"Classical CHSH Simulation (N = {N})")
+
+plt.savefig(f"Classical_CHSH_N_{N}.png", dpi=300, bbox_inches="tight")
+plt.close()
+\end{lstlisting}
 \newpage
 \subsubsection{Obtained Graphs}
 \begin{figure}[h!]
@@ -702,6 +626,58 @@ Let's analyze the obtained results
     \item For large $N$($N$=500,1000), all correlations $\approx 0$. $|S|$ is very small. Almost all points lie near the bottom.
 \end{itemize}
 On analyzing the results, we can say, as the number of particle pairs $N$ increases, the value of $|S|$ approaches zero due to statistical averaging in an uncorrelated system. In this simulation, Alice’s and Bob’s outcomes are generated independently, so there is no real correlation between them as there's no shared variable or connection between them. Because of this independence, knowing Alice’s outcome gives no information about Bob’s outcome, and the average product of their results tends to zero.
+
+The above python code is slightly modified to calculate the CHSH parameter of particle pairs $N$ ranging 1-10000 using a nested \textit{for} loop. The CHSH parameter is calculated 10 times for every $N$ and appends to a list. By using \texttt{max()} function the highest value of $|S|$ is appended to another list for plotting the curve. Then a single graph is plotted with $N$ in the x-axis and $|S|$ in the y-axis.
+\begin{lstlisting}[language=Python, basicstyle=\ttfamily\footnotesize]
+import numpy as np
+import matplotlib.pyplot as plt
+
+N = []
+S_values = []
+S_temp_values = []
+
+
+def correlation(a, b):
+    return np.mean(a * b)
+
+
+for i in range(10001):
+    S_temp_values.clear()
+    for j in range(10):
+        alice_X = np.random.choice([1, -1], i)
+        alice_Y = np.random.choice([1, -1], i)
+
+        bob_X   = np.random.choice([1, -1], i)
+        bob_Y   = np.random.choice([1, -1], i)
+
+        E_xx = correlation(alice_X, bob_X)
+        E_xy = correlation(alice_X, bob_Y)
+        E_yx = correlation(alice_Y, bob_X)
+        E_yy = correlation(alice_Y, bob_Y)
+
+        S = E_xx + E_xy + E_yx - E_yy
+
+        S_temp_values.append(abs(S))
+    N.append(i)
+    S_values.append(np.max(S_temp_values))
+
+plt.plot(N, S_values, ".")
+
+plt.xlabel("N")
+plt.ylabel("|S|")
+plt.grid(axis="y")
+plt.ylim(0, 2)
+
+plt.title(f"Classical CHSH Simulation (N=1-10000)")
+
+plt.savefig(f"Classical_CHSH_N_1-10000.png", dpi=300, bbox_inches="tight")
+plt.close()
+\end{lstlisting}
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=1\textwidth]{images/Classical_CHSH_N_1-10000.png}
+\end{figure}
+This graph once again confirms that as the number of particle pairs $|S|$ increases, the value of $|S|$ approaches zero due to this uncorrelated system.
 
 By modifying the python code a little bit, we can simulate a correlated system with a \textbf{shared hidden variabe}. In this simulation we are taking $N$ particle pairs and calculating CHSH parameter 1000 times.
 
@@ -783,6 +759,44 @@ plt.savefig(f"classical_CHSH_hidden_variable_N_{N}.png", dpi=300, bbox_inches="t
 plt.close()
 \end{lstlisting}
 \end{enumerate}
+\begin{lstlisting}[language=Python, basicstyle=\ttfamily\footnotesize]
+import numpy as np
+import matplotlib.pyplot as plt
+
+N = int(input("Number of particle pairs per trial: "))
+trials = 1000
+S_values = []
+
+def correlation(a, b):
+    return np.mean(a * b)
+
+for t in range(trials):
+    lam = np.random.choice([1, -1], N)
+
+    alice_X = lam
+    alice_Y = lam
+
+    bob_X = lam
+    bob_Y = -lam
+
+    E_xx = correlation(alice_X, bob_X)
+    E_xy = correlation(alice_X, bob_Y)
+    E_yx = correlation(alice_Y, bob_X)
+    E_yy = correlation(alice_Y, bob_Y)
+
+    S = E_xx + E_xy + E_yx - E_yy
+    S_values.append(S)
+
+plt.plot(range(trials), np.abs(S_values), ".")
+plt.ylim(0, 3)
+plt.xlabel("Trial number")
+plt.ylabel("|S|")
+plt.title(f"Classical CHSH Simulation (Hidden Variables, N = {N})")
+plt.grid(axis="y")
+plt.savefig(f"classical_CHSH_hidden_variable_N_{N}.png", dpi=300, bbox_inches="tight")
+plt.close()
+
+\end{lstlisting}
 \begin{figure}[H]
     \centering
     \includegraphics[width=1\textwidth]{images/classical_CHSH_hidden_variable_N_1000.png}
@@ -1001,6 +1015,44 @@ print("\nCHSH S =", S)
 print("|S| =", abs(S))
 \end{lstlisting}
 \end{enumerate}
+\begin{lstlisting}[language=Python, basicstyle=\ttfamily\footnotesize]
+import numpy as np
+
+N = 100000
+
+a  = 0
+a_p = np.pi/2
+b  = np.pi/4
+b_p = -np.pi/4
+
+def quantum_correlation(theta):
+    p_same = (1 - np.cos(theta)) / 2
+    results = []
+    for _ in range(N):
+        if np.random.rand() < p_same:
+            A = np.random.choice([1, -1])
+            B = A
+        else:
+            A = np.random.choice([1, -1])
+            B = -A
+
+        results.append(A * B)
+    return np.mean(results)
+
+E_ab   = quantum_correlation(a - b)
+E_ab_p = quantum_correlation(a - b_p)
+E_a_p_b = quantum_correlation(a_p - b)
+E_a_p_b_p = quantum_correlation(a_p - b_p)
+
+S = E_ab + E_ab_p + E_a_p_b - E_a_p_b_p
+
+print("E(a,b)      =", E_ab)
+print("E(a,b')     =", E_ab_p)
+print("E(a',b)     =", E_a_p_b)
+print("E(a',b')    =", E_a_p_b_p)
+print("\nCHSH S =", S)
+print("|S| =", abs(S))
+\end{lstlisting}
 \subsubsection{Simulation Result}
 \begin{figure}[H]
     \centering
@@ -1350,52 +1402,6 @@ In both experimental configurations, the calculated CHSH parameter remains well 
 Therefore, the observed correlations can be fully explained using classical wave optics and local realism.
 
 It should be noted that this experiment does not constitute a genuine Bell test, since the measurements are performed on a single classical light beam rather than on spatially separated entangled systems. Nevertheless, the experiment provides a useful classical baseline against which quantum mechanical violations of Bell-type inequalities can be compared.
-\section{Conclusion}
-This project explored the transition from classical physics to quantum mechanics and examined how our understanding of reality changes at the microscopic level. Classical physics assumes that physical properties exist with definite values whereas quantum mechanics introduced new principles such as superposition and entanglement that challenge these classical ideas.
 
-The study of Quantum Entanglement showed that two particles can become strongly correlated so that the measurement of one particle instantly determines the state of the other, even when they are far apart. This phenomenon was highlighted in the EPR Paradox, proposed by Albert Einstein, Boris Podolsky, and Nathan Rosen. Their argument questioned quantum mechanics.
-
-Later, John Bell developed Bell's Theorem, which provided a mathematical way to test whether hidden-variable theories could explain the correlations predicted by quantum mechanics. Bell derived inequalities that must be satisfied if local hidden variables exist. However, both theoretical predictions and experimental results show violations of these inequalities, indicating that nature does not follow the assumptions of classical locality and realism.
-
-The introduction of the CHSH Inequality provided a more practical form of Bell’s inequality that could be tested experimentally. Simulations and experiments demonstrate that quantum mechanical predictions exceed the classical limits set by these inequalities, confirming the existence of non-classical correlations between entangled particles.
-
-Overall, this study shows that the quantum world behaves in ways that cannot be fully explained using classical intuition. Thus, the investigation of entanglement, Bell’s theorem, and related experiments demonstrates that quantum mechanics provides a powerful and accurate description of the microscopic universe, while also opening new possibilities for future scientific and technological advancements.
-
-\begin{thebibliography}{9}
-
-\bibitem{wiki}
-Wikipedia.
-
-\bibitem{beiser}
-Arthur Beiser,
-\textit{Concepts of Modern Physics},
-6th Edition.
-
-\bibitem{krane}
-Kenneth S. Krane,
-\textit{Modern Physics},
-4th Edition.
-
-\bibitem{nielsen}
-Michael A. Nielsen and Isaac L. Chuang,
-\textit{Quantum Computation and Quantum Information}.
-
-\bibitem{ibm}
-IBM Quantum Platform.
-
-\bibitem{python}
-Python Programming Language.
-
-\bibitem{epr}
-Albert Einstein, Boris Podolsky, and Nathan Rosen,
-``Can Quantum-Mechanical Description of Physical Reality Be Considered Complete?'',
-1935.
-
-\bibitem{bell}
-John Stewart Bell,
-``On the Einstein Podolsky Rosen Paradox'',
-1964.
-
-\end{thebibliography}
 
 \end{document}
