@@ -38,15 +38,14 @@
 \contentsline {subsection}{\numberline {5.3}Experimental Setup}{40}{}%
 \contentsline {subsection}{\numberline {5.4}Normalization of Measurements}{41}{}%
 \contentsline {subsection}{\numberline {5.5}Conversion to Correlation Function}{42}{}%
-\contentsline {subsection}{\numberline {5.6}Evaluation of the CHSH Parameter}{43}{}%
-\contentsline {subsection}{\numberline {5.7}Experimental Data}{43}{}%
-\contentsline {subsubsection}{\numberline {5.7.1}Dataset 1}{43}{}%
-\contentsline {subsection}{\numberline {5.8}Normalization}{44}{}%
-\contentsline {subsection}{\numberline {5.9}Correlation Values}{44}{}%
-\contentsline {subsection}{\numberline {5.10}CHSH Evaluation}{44}{}%
-\contentsline {subsubsection}{\numberline {5.10.1}Dataset 2}{45}{}%
-\contentsline {subsection}{\numberline {5.11}Normalization}{45}{}%
-\contentsline {subsection}{\numberline {5.12}Correlation Values}{46}{}%
-\contentsline {subsection}{\numberline {5.13}CHSH Evaluation}{46}{}%
-\contentsline {subsection}{\numberline {5.14}Results}{46}{}%
+\contentsline {subsection}{\numberline {5.6}Experimental Data}{43}{}%
+\contentsline {subsubsection}{\numberline {5.6.1}Dataset 1}{43}{}%
+\contentsline {subsection}{\numberline {5.7}Normalization}{43}{}%
+\contentsline {subsection}{\numberline {5.8}Correlation Values}{44}{}%
+\contentsline {subsection}{\numberline {5.9}CHSH Evaluation}{44}{}%
+\contentsline {subsubsection}{\numberline {5.9.1}Dataset 2}{45}{}%
+\contentsline {subsection}{\numberline {5.10}Normalization}{45}{}%
+\contentsline {subsection}{\numberline {5.11}Correlation Values}{45}{}%
+\contentsline {subsection}{\numberline {5.12}CHSH Evaluation}{46}{}%
+\contentsline {subsection}{\numberline {5.13}Results}{46}{}%
 \contentsline {section}{\numberline {6}Conclusion}{47}{}%

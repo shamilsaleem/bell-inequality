@@ -40,7 +40,7 @@
 
 \textbf{ST. JOSEPH'S COLLEGE (AUTONOMOUS), DEVAGIRI, CALICUT}\\[1cm]
 
-\textbf{ “projectname”}\\[1cm]
+\textbf{ “Beyond Classical Physics: Entanglement and Bell's Theorem”}\\[1cm]
 
 Report of the project submitted to\\
 St. Joseph's College (Autonomous), Devagiri\\
@@ -77,7 +77,7 @@ Principal \hfill Head of the Department \hfill Supervisor
 \justifying
 
 This is to certify that \textbf{Ms. DEVI KRISHNA A} has worked on the topic
-“\textbf{projectname}” at St. Joseph’s College Devagiri (Autonomous), Calicut, under my supervision and guidance. This work has been carried out for the partial fulfilment of the Bachelor of Science Degree in Physics, University of Calicut.
+“\textbf{Beyond Classical Physics: Entanglement and Bell's Theorem}” at St. Joseph’s College Devagiri (Autonomous), Calicut, under my supervision and guidance. This work has been carried out for the partial fulfilment of the Bachelor of Science Degree in Physics, University of Calicut.
 
 \vspace{1cm}
 \noindent \textbf{GROUP MEMBERS}
@@ -106,7 +106,7 @@ Kerala \hfill Kerala
 \section*{\centering DECLARATION}
 \justifying
 
-We hereby declare that this project entitled “\textbf{projectname}” submitted to St. Joseph’s College (Autonomous), Devagiri, affiliated to University of Calicut in partial fulfilment of the requirements for the award of degree of BACHELOR OF SCIENCE IN PHYSICS is a record of original project work done by us under the supervision and guidance of Dr. SHINTO P. MATHEW.
+We hereby declare that this project entitled “\textbf{Beyond Classical Physics: Entanglement and Bell's Theorem}” submitted to St. Joseph’s College (Autonomous), Devagiri, affiliated to University of Calicut in partial fulfilment of the requirements for the award of degree of BACHELOR OF SCIENCE IN PHYSICS is a record of original project work done by us under the supervision and guidance of Dr. SHINTO P. MATHEW.
 
 \vspace{2cm}
 
@@ -1056,9 +1056,7 @@ Therefore, the measured photocurrent (in $\mu A$) can be used as a direct proxy 
 
 \subsection{Experimental Setup}
 
-The optical arrangement used in the experiment is illustrated schematically as
-
-
+The optical arrangement used in the experiment is shown below:
 
 \begin{figure}[H]
     \centering
@@ -1066,99 +1064,75 @@ The optical arrangement used in the experiment is illustrated schematically as
 \end{figure}
 
 
-
-
 Polarizer A defines the polarization direction of the light entering the system, while Polarizer B acts as an analyzer whose transmission axis can be rotated relative to the first polarizer. The photodiode placed after the second polarizer measures the transmitted intensity in the form of photocurrent.
 
 \subsection{Normalization of Measurements}
 
-To remove the dependence on absolute laser power and detector sensitivity, all measured currents were normalized relative to the maximum photocurrent obtained when both polarizers were aligned.
+In the experiment, the photodiode measures the photocurrent, which is directly proportional to the intensity of the transmitted light. However, the measured current depends not only on polarization effects but also on external factors such as fluctuations in laser power, detector sensitivity, and alignment errors.
 
-Let
+To eliminate these effects, all measurements are normalized with respect to the maximum photocurrent obtained when the two polarizers are aligned.
 
-\[
-I_{\text{max}}
-\]
+Let $I_{\text{max}}$ denote the maximum measured photocurrent. For any pair of polarizer angles $a$ and $b$, the normalized transmission is defined as:
 
-denote the maximum measured photocurrent. For a given pair of polarizer angles $a$ and $b$, the normalized transmission is defined as
-
-\[
+\begin{equation}
 T(a,b) = \frac{I(a,b)}{I_{\text{max}}}
-\]
+\end{equation}
 
-where
-
+Here:
 \begin{itemize}
-\item $I(a,b)$ is the measured photocurrent for polarizer angles $a$ and $b$,
-\item $T(a,b)$ represents the normalized transmission.
+    \item $I(a,b)$ is the measured photocurrent for polarizer settings $a$ and $b$,
+    \item $T(a,b)$ represents the fraction of transmitted intensity.
 \end{itemize}
 
-This normalization removes systematic scaling factors associated with the detector and source intensity.
+This normalization removes dependence on absolute intensity and detector scaling factors.
+
+The normalized transmission satisfies:
+\begin{itemize}
+    \item $T = 1$ corresponds to maximum transmission,
+    \item $T = 0$ corresponds to zero transmission,
+    \item $0 < T < 1$ corresponds to partial transmission.
+\end{itemize}
+
+Using Malus' Law, the transmission can be expressed as:
+\begin{equation}
+T(\theta) = \cos^2(\theta)
+\end{equation}
+
 
 \subsection{Conversion to Correlation Function}
 
-In order to analyze the experimental data using the CHSH framework, the normalized transmission must be mapped onto a correlation function that ranges between $-1$ and $+1$. This mapping is performed using
-\[
+To analyze the data within the CHSH framework, the measured quantity must be expressed as a correlation function ranging between $-1$ and $+1$. However, the normalized transmission $T(a,b)$ lies between $0$ and $1$.
+
+To map this into the required range, we perform a linear transformation and define the correlation function as:
+\begin{equation}
 E(a,b) = 2T(a,b) - 1
-\]
+\end{equation}
 
-where
-
+This transformation rescales the values as follows:
 \begin{itemize}
-\item $E(a,b)$ represents the correlation associated with measurement settings $a$ and $b$,
-\item $T(a,b)$ is the normalized transmission.
+    \item $T = 1 \rightarrow E = +1$
+    \item $T = 0.5 \rightarrow E = 0$
+    \item $T = 0 \rightarrow E = -1$
 \end{itemize}
 
-This transformation rescales the normalized transmission into the interval required for CHSH correlation analysis.
+Physically, this means that higher transmission corresponds to stronger positive correlation, while lower transmission corresponds to negative correlation.
 
-Using Malus' Law, the normalized transmission can be written as
-
-\[
-T(\theta) = \cos^2(\theta)
-\]
-
-which leads to the correlation function
-
-\[
+Substituting Malus' Law into the above expression:
+\begin{equation}
 E(\theta) = 2\cos^2(\theta) - 1
-\]
+\end{equation}
 
-Using the trigonometric identity
+Using the trigonometric identity:
+\begin{equation}
+\cos^2(\theta) = \frac{1 + \cos(2\theta)}{2}
+\end{equation}
 
-\[
-\cos^2(\theta) = \frac{1+\cos(2\theta)}{2}
-\]
-
-the correlation becomes
-
-\[
+we obtain:
+\begin{equation}
 E(\theta) = \cos(2\theta)
-\]
+\end{equation}
 
-This result represents the theoretical prediction for correlations in a classical polarization experiment.
-
-\subsection{Evaluation of the CHSH Parameter}
-
-The CHSH parameter is defined as
-
-\[
-S = E(a,b) - E(a,b') + E(a',b) + E(a',b')
-\]
-
-where
-
-\begin{itemize}
-\item $a, a'$ are two measurement settings for the first polarizer,
-\item $b, b'$ are two measurement settings for the second polarizer.
-\end{itemize}
-
-For any classical local model, the CHSH inequality requires that
-
-\[
-|S| \le 2
-\]
-
-Values larger than $2$ indicate correlations that cannot be explained by classical local theories.
+This represents the theoretical prediction for correlations in a classical polarization experiment.
 
 \subsection{Experimental Data}
 
@@ -1167,8 +1141,9 @@ The maximum measured photocurrent was
 \[
 I_{\text{max}} = 2.8\,\mu A
 \]
+at $a = 0^\circ$, $b = 0^\circ$
 
-\subsubsection{Dataset 1}
+\subsubsection {Dataset 1}
 
 Measurement angles:
 
@@ -1190,7 +1165,7 @@ $I(a',b')$ & 0.2 \\
 
 The recorded intensities were:
 
-\subsection{Normalization}
+\subsection {Normalization}
 
 The normalized transmission probabilities are
 
@@ -1210,7 +1185,7 @@ T(a',b) = \frac{0.2}{2.8} = 0.071
 T(a',b') = \frac{0.2}{2.8} = 0.071
 \]
 
-\subsection{Correlation Values}
+\subsection {Correlation Values}
 
 The correlation function is calculated using
 
@@ -1221,7 +1196,7 @@ E(a,b) = 2T(a,b) - 1
 Thus,
 
 \[
-E(a,b) = 2(0.571) - 1 = 0.143
+E(a,b) = 2\times0.571 - 1 = 0.143
 \]
 
 \[
@@ -1236,7 +1211,7 @@ E(a',b) = -0.857
 E(a',b') = -0.857
 \]
 
-\subsection{CHSH Evaluation}
+\subsection {CHSH Evaluation}
 
 The CHSH parameter is
 
@@ -1258,7 +1233,7 @@ S \approx -0.857
 
 Thus, the classical CHSH bound is satisfied.
 
-\subsubsection{Dataset 2}
+\subsubsection {Dataset 2}
 
 Measurement angles:
 
@@ -1279,7 +1254,7 @@ $I(a',b')$ & 2.4 \\
 \end{tabular}
 \end{table}
 
-\subsection{Normalization}
+\subsection {Normalization}
 
 \[
 T(a,b) = 0.429
@@ -1297,7 +1272,7 @@ T(a',b) = 0.679
 T(a',b') = 0.857
 \]
 
-\subsection{Correlation Values}
+\subsection {Correlation Values}
 
 \[
 E(a,b) = -0.143
@@ -1315,7 +1290,7 @@ E(a',b) = 0.357
 E(a',b') = 0.714
 \]
 
-\subsection{CHSH Evaluation}
+\subsection {CHSH Evaluation}
 
 \[
 S = (-0.143) - (-0.143) + 0.357 + 0.714
@@ -1331,7 +1306,7 @@ S \approx 1.071
 
 Again, the classical CHSH inequality is satisfied.
 
-\subsection{Results}
+\subsection {Results}
 \begin{itemize}
     \item First CHSH result, $|S|$ $\approx$ 0.857
     \item Second CHSH result, $|S|$ $\approx$ 1.071
@@ -1341,7 +1316,7 @@ In both experimental configurations, the calculated CHSH parameter remains well 
 
 Therefore, the observed correlations can be fully explained using classical wave optics and local realism.
 
-It should be noted that this experiment does not constitute a genuine Bell test, since the measurements are performed on a single classical light beam rather than on spatially separated entangled systems. Nevertheless, the experiment provides a useful classical baseline against which quantum mechanical violations of Bell-type inequalities can be compared.
+It should be noted that this experiment does not constitute a genuine Bell test, since the measurements are performed on a single classical light beam rather than on spatially separated entangled systems. Instead, it serves as a classical analogue of a Bell-type experiment, in which the mathematical structure of the CHSH inequality is reproduced using intensity measurements rather than independent measurement outcomes. Nevertheless, the experiment provides a useful classical baseline against which quantum mechanical violations of Bell-type inequalities can be compared.
 \section{Conclusion}
 This project explored the transition from classical physics to quantum mechanics and examined how our understanding of reality changes at the microscopic level. Classical physics assumes that physical properties exist with definite values whereas quantum mechanics introduced new principles such as superposition and entanglement that challenge these classical ideas.
 
@@ -1387,6 +1362,9 @@ Albert Einstein, Boris Podolsky, and Nathan Rosen,
 John Stewart Bell,
 ``On the Einstein Podolsky Rosen Paradox'',
 1964.
+
+\bibitem{chsh}
+J.F. Clauser; M.A. Horne; A. Shimony; R.A. Holt (1969), "Proposed experiment to test local hidden-variable theories"
 
 \end{thebibliography}
 
